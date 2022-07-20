@@ -21,7 +21,7 @@ export class ListarComponent implements OnInit {
 
   ngOnInit(): void {
     // var sesionCookie:string=this.cookieService.get('sesion')
-    var sesionCookie:string="1"
+    var sesionCookie:string="2"
     if (sesionCookie==""){
       this.router.navigate([''])
     }

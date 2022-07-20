@@ -14,8 +14,8 @@ export class SubastaService {
   Listar(id:number){
     return this.http.get<Subasta[]>(`${this.apiBase}${this.controller}/mis/${id}`);
   }
-  ListarCercanasComprador(id:number){
-    return this.http.get<Subasta[]>(`${this.apiBase}${this.controller}/misc/serca/${id}`)
+  ListarPorComprador(id:number){
+    return this.http.get<Subasta[]>(`${this.apiBase}${this.controller}/misc/${id}`)
   }
 
 }

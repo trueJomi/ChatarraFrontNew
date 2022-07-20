@@ -25,7 +25,7 @@ export class ListarComponent implements OnInit {
       this.router.navigate([''])
     }
 
-    this.subastaService.ListarCercanasComprador(+sesionCookie).subscribe(
+    this.subastaService.ListarPorComprador(+sesionCookie).subscribe(
       (res:any)=>{
         for(var i in res.body){
           var subasta:Subasta=new Subasta();
