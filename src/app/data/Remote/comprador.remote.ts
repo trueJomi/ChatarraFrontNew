@@ -1,17 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Comprador } from 'src/app/domain/entities/clients.entity';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PropuestaService {
-
+export class CompradorService {
   private apiBase: string=environment.apiOrquestador;
   constructor(private http:HttpClient) { }
-  
-  ObtenerMayor(idSubasta:number){
-    return this.http.get(`${this.apiBase}/propuesta/mayor/${idSubasta}`)
-  }
 
 }

@@ -1,0 +1,28 @@
+<aside class="slidebar" [ngClass]="{'slidebar--active':toggle}">
+    <!-- <aside class="slidebar sidebar--active" > -->
+    <ul class="mt-5">
+        <li>
+            <a href="">lorem 1</a>
+        </li>
+        <li>
+            <a href="">lorem 2</a>
+        </li>
+        <li>
+            <a class="logout" (click)="cerrarSesion()">Cerrar Sesion</a>
+        </li>
+    </ul>
+</aside>
+
+<div class="navbar">
+    <button class="navbar-toggler" type="button" (click)="toggleSlideBar()">
+        <i class="fa-solid fa-bars icon-var"></i>
+    </button>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+
+<button class="crear" routerLink="crearSubasta">
+    +
+</button>

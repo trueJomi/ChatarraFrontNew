@@ -1,0 +1,92 @@
+.navbar{
+    background-color: #23B7D9;
+    height: 5.8rem;
+}
+.navbar > button{
+    margin-left: 15px;
+    background-color: #25A6D9;
+    border: 1px solid white;
+}
+
+.navbar > button:hover{
+    background-color: #23B7D9;
+}
+
+.icon-var{
+    color: white;
+    font-size: 40px;
+}
+
+.slidebar{
+    position: absolute;
+    background-color: #23B7D9;
+    height: 100%;
+    left: -100%;
+    transition: left 0.3s ease-in-out;
+}
+
+.slidebar ul{
+    list-style: none;
+    padding: 72px;
+}
+
+.slidebar ul>li{
+    margin: 0.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.slidebar a{
+    
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.slidebar .logout{
+    border-radius: 2rem;
+    padding: 0.5rem;
+    background-color: rgb(189, 10, 10);
+    font-weight: 500;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+.slidebar a:hover{
+    text-decoration: underline;
+    color: #1a7c93;
+}
+
+.slidebar .logout:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.slidebar--active{
+    left:0;
+}
+
+.crear{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    left: 80%;
+    top: 80%;
+    background-color: #6DD5ED;
+    color: #42AA39;
+    font-size: 90px;
+    font-weight: bolder;
+    font-family:sans-serif;
+}
+
+.crear:hover{
+    background-color: #74e4fd;
+    transition: 0.3s;
+}

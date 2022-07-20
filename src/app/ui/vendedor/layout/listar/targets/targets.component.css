@@ -1,0 +1,12 @@
+.target{
+    background-color: #6DD5ED;
+    color: white;
+    width: 75%;
+    min-width: 23rem;
+    padding: 2rem;
+}
+
+.target a{
+    text-decoration: none;
+    color: inherit;
+}

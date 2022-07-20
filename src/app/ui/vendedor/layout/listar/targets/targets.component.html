@@ -1,0 +1,30 @@
+<div class="target mx-auto" >
+    <a [routerLink]="['subasta',target.idSubasta]" >
+        <h2>{{target.chatarra.titulo}}</h2>
+        <p>{{target.chatarra.description}}</p>
+
+        <div *ngIf="target.seleccionado==null">
+            <h2 class="no_propuesta"  *ngIf="propuesta==null" >
+                "no hay propuestas"
+            </h2>
+            <h2 class="nombre" *ngIf="propuesta!=null" >
+                {{propuesta.comprador?.name}}
+            </h2>
+            <h1 class="precio" *ngIf="propuesta!=null" >
+                S/{{propuesta.price}}
+            </h1>
+        </div>
+        <div *ngIf="target.seleccionado!=null" >
+            <h2 class="nombre" *ngIf="propuesta!=null" >
+                {{target.seleccionado.comprador?.name}}
+            </h2>
+            <h1 class="precio" *ngIf="propuesta!=null" >
+                S/{{target.seleccionado?.price}}
+            </h1>
+        </div>
+        
+        <span class="icon">
+            <i [class]="icon_status(target.status)"></i>
+        </span>
+    </a>
+</div>
