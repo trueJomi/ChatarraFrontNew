@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubastaServicePresenter } from 'src/app/adapters/Presenter/subasta.presenter';
 
 @Component({
   selector: 'app-subasta',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubastaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    subasta:SubastaServicePresenter,
+  ) { }
 
   ngOnInit(): void {
   }

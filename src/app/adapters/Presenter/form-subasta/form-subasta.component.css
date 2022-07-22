@@ -1,0 +1,19 @@
+.butons{
+    justify-items: center;
+    top: 20%;
+}
+
+.cancel{
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;    
+}
+
+.cancel:hover {
+    transition: 0.3s;
+    background-color: white;
+}
+
+.submit{
+    color: white;
+    background-color: black;
+}

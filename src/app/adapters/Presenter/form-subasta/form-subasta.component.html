@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-offset-3 mx-auto">
+        <form
+            (ngSubmit)="save()"
+            autocomplete="off"
+            [formGroup]="formSubasta"
+            #frmSubasta="ngForm"
+        >
+          <mat-form-field appearance="outline" class="d-block">
+              <mat-label>Titutlo</mat-label>
+              <input
+                matInput
+                type="text"
+                placeholder="titulo"
+                formControlName="titulo"
+                [value]="chatarra.titulo"
+              />
+      
+              <mat-error *ngIf="formSubasta.controls['titulo'].hasError('required')">
+                Este campo es obligatorio
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="d-block">
+              <mat-label>Descripcción</mat-label>
+              <textarea 
+                cols="30"
+                rows="10"
+                matInput
+                type="text"
+                placeholder="Descripcción"
+                formControlName="description"
+                [value]="chatarra.description">
+              </textarea>
+      
+              <mat-error *ngIf="formSubasta.controls['description'].hasError('required')">
+                descripción obligatorio
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Precio Base</mat-label>
+            <input
+              matInput
+              type="number"
+              placeholder="Precio Base"
+              formControlName="precioBase"
+              [value]="chatarra.precioBase"/>
+    
+            <mat-error *ngIf="formSubasta.controls['precioBase'].hasError('required')">
+              Este campo es obligatorio
+            </mat-error>
+        </mat-form-field>
+          <div class="d-flex justify-content-center" >
+            <button
+              class="col cancel" 
+              mat-button
+              [routerLink]="return">
+             Cancelar
+            </button>
+
+            <button
+                ngClass="col submit"
+                mat-raised-button
+                type="submit"
+                class="ms-2"
+                [disabled]="frmSubasta.invalid">
+              Guardar
+            </button>
+          </div>
+        
+        </form>
+    </div>
+</div>
+

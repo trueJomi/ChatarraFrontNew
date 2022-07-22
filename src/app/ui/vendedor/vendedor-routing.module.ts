@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HistorialComponent } from './layout/historial/historial.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ListarComponent } from './layout/listar/listar.component';
-import { SubastaComponent } from './subasta/subasta.component';
+import { SubastaComponent } from './subasta-components/subasta/subasta.component';
 
 const routes: Routes = [
   {
