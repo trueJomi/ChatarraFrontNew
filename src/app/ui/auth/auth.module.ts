@@ -6,6 +6,7 @@ import { LoginCompradorComponent } from './login-comprador/login-comprador.compo
 import { LoginVendedorComponent } from './login-vendedor/login-vendedor.component';
 import { RegisterCompradorComponent } from './register-comprador/register-comprador.component';
 import { RegisterVendedorComponent } from './register-vendedor/register-vendedor.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RegisterVendedorComponent } from './register-vendedor/register-vendedor
   ],
   imports: [
     CommonModule,
+    FormsModule,
     AuthRoutingModule,
   ]
 })

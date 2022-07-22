@@ -1,1 +1,33 @@
-<p>login-vendedor works!</p>
+<div class="container">
+    <div class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 border rounded p-5">
+                <button class="boton-otro-login" routerLink="comprador">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span> Ingresar como Comprador </span>
+                </button>
+                <div class="text-center">
+                    <h1 class="fs-2">Inicio de Sesión</h1>
+                </div>
+                <form #loginform="ngForm" (ngSubmit)="login()">
+                    <small class="text-danger">{{msg}}</small>
+                    <div class="mb-3 form-group">
+                        <label for="user">Usuario</label>
+                        <input type="email" class="form-control border-dark" id="user" name="user" [(ngModel)]="vendedor.user">
+                    </div>
+                    <div class="mb-3 form-group">
+                        <label for="pwd">Contraseña</label>
+                        <input type="password" class="form-control border-dark" id="pwd" name="pwd" [(ngModel)]="vendedor.password">
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn boton col-12">INICIAR SESION</button>
+                    </div>
+                    <br>
+                    Si no tienes cuenta 
+                    <a class="registrate" [routerLink]="['/registro-vendedor']">Registrate aqui</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
