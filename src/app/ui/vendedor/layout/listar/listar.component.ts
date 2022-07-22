@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieSesionService } from 'src/app/data/Local/cookie-sesion.local';
 import { SubastaService } from 'src/app/data/remote/subasta.remote';
 import { Chatarra, Subasta } from 'src/app/domain/entities/subasta.entity';
 
@@ -16,12 +16,11 @@ export class ListarComponent implements OnInit {
   constructor(
     private subastaService:SubastaService,
     private router:Router,
-    private cookieService:CookieService,
+    private cookieService:CookieSesionService,
     ) { }
 
   ngOnInit(): void {
-    // var sesionCookie:string=this.cookieService.get('sesion')
-    var sesionCookie:string="2"
+    var sesionCookie:string=this.cookieService.getCookieV()
     if (sesionCookie==""){
       this.router.navigate([''])
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieSesionService } from 'src/app/data/Local/cookie-sesion.local';
 
 @Component({
   selector: 'app-layout',
@@ -9,10 +9,10 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LayoutComponent implements OnInit {
   toggle:boolean=false;
-  constructor(private router:Router,private cookieService: CookieService) { }
+  constructor(private router:Router,private cookieService: CookieSesionService) { }
 
   ngOnInit(): void {
-    var sesionCookie:string='1';
+    var sesionCookie:string=this.cookieService.getCookieV();
     if(sesionCookie==""){
       this.router.navigate([''])
     }
@@ -23,7 +23,7 @@ export class LayoutComponent implements OnInit {
   }
 
   cerrarSesion(){
-    // this.cookieService.delete('sesion')
+    this.cookieService.deleteCookieV()
     this.router.navigate([''])
   }
 
