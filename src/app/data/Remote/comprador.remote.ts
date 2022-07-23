@@ -13,8 +13,7 @@ export class CompradorService {
   public loginComprador(comprador: Comprador){
     return this.http.post(`${this.apiBase}/comprador/login`,comprador)
   }
-
-  public registerComprador(comprador:Comprador){
-    return this.http.post(`${this.apiBase}/comprador/resgister`,comprador)
+  createComprador(comprador:Comprador){
+    return this.http.post<Comprador>(`${this.apiBase}/comprador/resgister`,comprador);
   }
 }

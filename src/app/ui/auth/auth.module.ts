@@ -7,6 +7,7 @@ import { LoginVendedorComponent } from './login-vendedor/login-vendedor.componen
 import { RegisterCompradorComponent } from './register-comprador/register-comprador.component';
 import { RegisterVendedorComponent } from './register-vendedor/register-vendedor.component';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     AuthRoutingModule,
+    MaterialModule
   ]
 })
 export class AuthModule { }

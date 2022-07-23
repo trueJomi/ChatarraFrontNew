@@ -14,7 +14,10 @@ export class LoginVendedorComponent implements OnInit {
   vendedor = new Vendedor();
   msg='';
 
-  constructor(private vendedorService: VendedorService, private router:Router,private cookieService: CookieSesionService) { }
+  constructor(
+    private vendedorService: VendedorService,
+    private router:Router,
+    private cookieService: CookieSesionService) { }
 
   ngOnInit(): void {
     var sesionCookie:string =this.cookieService.getCookieV()
