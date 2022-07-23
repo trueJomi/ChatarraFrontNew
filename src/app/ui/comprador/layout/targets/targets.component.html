@@ -1,6 +1,6 @@
 <div class="target mx-auto container" >
     <div class="row">
-        <a [routerLink]="['subasta-c',target.idSubasta]" class="col-10 text-break">
+        <a [routerLink]="['/Comprador-home/subasta-c',target.idSubasta] " [ngClass]="{'not-active': isMe()}"  class="col-10 text-break">
             <h2 class="titulo" >{{target.chatarra.titulo}}</h2>
             <p>{{target.chatarra.description}}</p>
 
@@ -11,6 +11,11 @@
                     </h2>
                     <h1 class="precio" >
                         S/{{propuesta.price}}
+                    </h1>
+                </div>
+                <div *ngIf="target.fechaRecojo!=null">
+                    <h1>
+                        {{target.fechaRecojo}
                     </h1>
                 </div>
                 <div *ngIf="propuesta==null">

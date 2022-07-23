@@ -52,6 +52,9 @@ export class SubastaComponent implements OnInit {
           if(this.subasta.status=='aceptado'){
             this.router.navigate(['/home/espera',this.subasta.idSubasta])
           }
+          if(this.subasta.status=='recogiendo'){
+            this.router.navigate(['/home/completar',this.subasta.idSubasta])
+          }
         }
       )
       this.propuestaSercice.ObtenerMayor(idSubasta).subscribe(

@@ -13,10 +13,10 @@ export class SubastaService {
   constructor(private http:HttpClient) { }
 
   Listar(id:number){
-    return this.http.get<Subasta[]>(`${this.apiBase}${this.controller}/mis/${id}`);
+    return this.http.get<Response<Subasta[]>>(`${this.apiBase}${this.controller}/mis/${id}`);
   }
   ListarPorComprador(id:number){
-    return this.http.get<Subasta[]>(`${this.apiBase}${this.controller}/misc/${id}`)
+    return this.http.get<Response<Subasta[]>>(`${this.apiBase}${this.controller}/misc/${id}`)
   }
   CrearSubasta(subasta:Subasta){
     return this.http.post<Response<Subasta>>(`${this.apiBase}${this.controller}`,subasta)
@@ -26,6 +26,9 @@ export class SubastaService {
   }
   GetSubasta(id:number){
     return this.http.get<Response<Subasta>>(`${this.apiBase}${this.controller}/${id}`)
+  }
+  ListarSubastasSercanas(id:number){
+    return this.http.get<Response<Subasta[]>>(`${this.apiBase}${this.controller}/misc/serca/${id}`)
   }
 
 }

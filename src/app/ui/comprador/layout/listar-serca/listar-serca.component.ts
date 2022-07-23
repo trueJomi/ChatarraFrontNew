@@ -2,33 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieSesionService } from 'src/app/data/Local/cookie-sesion.local';
 import { SubastaService } from 'src/app/data/remote/subasta.remote';
-import { Chatarra, Subasta } from 'src/app/domain/entities/subasta.entity';
+import { Subasta } from 'src/app/domain/entities/subasta.entity';
 
 @Component({
-  selector: 'app-listar',
-  templateUrl: './listar.component.html',
-  styleUrls: ['./listar.component.css']
+  selector: 'app-listar-serca',
+  templateUrl: './listar-serca.component.html',
+  styleUrls: ['./listar-serca.component.css']
 })
-export class ListarComponent implements OnInit {
+export class ListarSercaComponent implements OnInit {
+
   targets:Subasta[]=[]
 
   constructor(
-    private subastaService:SubastaService,
-    private router:Router,
     private cookieService:CookieSesionService,
-    ) { }
+    private router:Router,
+    private subastaService:SubastaService,
+  ) { }
 
   ngOnInit(): void {
     var sesionCookie:string=this.cookieService.getCookieC()
     if (sesionCookie==""){
-      this.router.navigate(['comprador'])
+      this.router.navigate([''])
     }
 
-    this.subastaService.ListarPorComprador(+sesionCookie).subscribe(
+    this.subastaService.ListarSubastasSercanas(+sesionCookie).subscribe(
       (res)=>{
         this.targets=res.body
       }
     )
-
   }
+
 }

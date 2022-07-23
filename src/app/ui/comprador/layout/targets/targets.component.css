@@ -49,3 +49,7 @@
     background-color: #74e4fd;
     transition: 0.3s;
 }
+.not-active { 
+    pointer-events: none; 
+    cursor: default; 
+} 

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CookieSesionService } from 'src/app/data/Local/cookie-sesion.local';
 import { PropuestaService } from 'src/app/data/Remote/propuesta.remote';
-import { PropuestaExt, Subasta} from 'src/app/domain/entities/subasta.entity';
+import { PropuestaExt, Subasta, } from 'src/app/domain/entities/subasta.entity';
 
 @Component({
   selector: 'app-targets',
@@ -8,9 +9,11 @@ import { PropuestaExt, Subasta} from 'src/app/domain/entities/subasta.entity';
   styleUrls: ['./targets.component.css']
 })
 export class TargetsComponent implements OnInit {
+
   @Input()
   target: Subasta;
-  propuesta: PropuestaExt;
+  propuesta!: PropuestaExt;
+
   estados = [{
       nombre: "activo",
       class: "",
@@ -29,10 +32,23 @@ export class TargetsComponent implements OnInit {
     {
       nombre:"cancelado",
     }
-  ]
-  constructor(private propuestaService: PropuestaService) { }
+  ];
+  @Input()
+  sesionCookie:number;
+  
+  notify:boolean=false;
+
+  constructor(
+    private propuestaService: PropuestaService,
+    private cookieSesion:CookieSesionService,
+    ) { }
 
   ngOnInit(): void {
+    this.sesionCookie=+this.cookieSesion.getCookieC()
+
+    if (this.target.seleccionado?.comprador.idShopper == this.sesionCookie) {
+      this.notify = true
+    }
     this.propuestaService.ObtenerMayor(this.target.idSubasta).subscribe(
       (res: any) => {
         if (res.body == null) {
@@ -50,15 +66,25 @@ export class TargetsComponent implements OnInit {
     )
   }
 
-  icon_status(status:string){
-    for (var i in this.estados){
-      if(status == this.estados[i].nombre){
+  icon_status(status: string) {
+    for (var i in this.estados) {
+      if (status == this.estados[i].nombre) {
         return this.estados[i].class;
       }
     }
     return null;
   }
-  edit_subasta(){
-    
+
+  isMe(){
+    if(this.target.status!='activo'){
+      if(this.target.seleccionado.comprador.idShopper==this.sesionCookie){
+          return false
+      }
+      else{
+        return true
+      }
+    }else{
+      return false
+    }
   }
 }

@@ -3,7 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CookieSesionService } from 'src/app/data/Local/cookie-sesion.local';
 import { PropuestaService } from 'src/app/data/Remote/propuesta.remote';
 import { SubastaService } from 'src/app/data/remote/subasta.remote';
-import { Chatarra, Propuesta, Subasta } from 'src/app/domain/entities/subasta.entity';
+import { Comprador } from 'src/app/domain/entities/clients.entity';
+import { Chatarra, Propuesta, PropuestaExt, Subasta } from 'src/app/domain/entities/subasta.entity';
 
 @Component({
   selector: 'app-subasta-c',
@@ -17,6 +18,7 @@ export class SubastaCComponent implements OnInit {
   subasta: Subasta = new Subasta();
   chatarra: Chatarra = new Chatarra();
   misPropuestas: Propuesta[] = [];
+  mayor:PropuestaExt= new PropuestaExt();
 
   constructor(
     private propuestaservice:PropuestaService,
@@ -28,6 +30,10 @@ export class SubastaCComponent implements OnInit {
     this.activeRoute.paramMap.subscribe(paramMap => {
       this.idSubasta = Number(paramMap.get('id'));
     })
+    this.mayor.price=0
+    var temp:Comprador=new Comprador()
+    temp.name=""
+    this.mayor.comprador=temp
   }
 
   ngOnInit(): void {
@@ -40,16 +46,27 @@ export class SubastaCComponent implements OnInit {
         this.subasta=data.body;
         this.misPropuestas=data.body.propuestas;
         this.chatarra= data.body.chatarra;
+        if(this.subasta.status=='aceptado'){
+          this.router.navigate(['/Comprador-home/recojo',this.subasta.idSubasta])
+        }
+        if(this.subasta.status=='recogiendo'){
+          this.router.navigate(['/Comprador-home/completar',this.subasta.idSubasta])
+        }
       }
     )
+    this.propuestaservice.ObtenerMayor(this.idSubasta).subscribe(
+      data=>{
+          this.mayor=data.body
+      },
+    )
   }
-  createPropuesta(propuesta:Propuesta) {
+  createPropuesta(propuesta:any) {
     var sesionCookie: string = this.cookiesService.getCookieC()
     propuesta.subasta = this.idSubasta;
     propuesta.comprador = +sesionCookie;
     this.propuestaservice.CrearPropuesta(propuesta).subscribe(
       (res) => {
-        this.router.navigate(['/Comprador-home/subasta-c',this.subasta.idSubasta]);
+        window.location.reload();
       }
     )
 
@@ -70,9 +87,6 @@ export class SubastaCComponent implements OnInit {
         () => {
           console.log("Se retiro de la Subasta")
           this.router.navigate(['/Comprador-home']);
-        },
-        err => {
-          console.log(err);
         }
       )
     }

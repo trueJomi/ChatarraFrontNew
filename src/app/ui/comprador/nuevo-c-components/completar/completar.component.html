@@ -1,0 +1,23 @@
+<div class="cont position-absolute mx-auto">
+    <div class="navbar">
+        <button class="mt-3 mx-5 back" routerLink="/Comprador-home">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+    </div>
+    <div class="justify-content-center mx-auto inter mt-5">
+        <div class="texto precio mt-10" >
+            S/{{propuesta.price}}
+        </div>
+        <div class="texto mt-5" >
+            Recibiste tu Articulo?..
+        </div>
+        <div class="justify-content-center mx-auto botom" >
+            <button class="cancelar" (click)="aceptarCompletar()">
+                Aceptar
+            </button>
+        </div>
+        
+    </div>
+
+    
+</div>

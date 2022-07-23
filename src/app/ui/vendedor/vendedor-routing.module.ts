@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HistorialComponent } from './layout/historial/historial.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ListarComponent } from './layout/listar/listar.component';
+import { CompletarComponent } from './subasta-components/completar/completar.component';
 import { EditSubastaComponent } from './subasta-components/edit-subasta/edit-subasta.component';
 import { EsperaComponent } from './subasta-components/espera/espera.component';
 import { NewSubastaComponent } from './subasta-components/new-subasta/new-subasta.component';
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path:'espera/:id',
     component:EsperaComponent,
+  },
+  {
+    path:'completar/:id',
+    component:CompletarComponent
   }
   
 ];

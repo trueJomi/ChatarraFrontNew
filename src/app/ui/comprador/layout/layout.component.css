@@ -1,6 +1,7 @@
 .navbar{
+    justify-content: center;
     background-color: #23B7D9;
-    height: 5.8rem;
+    height: 6rem;
 }
 .navbar > button{
     margin-left: 15px;
@@ -69,4 +70,29 @@
 
 .slidebar--active{
     left:0;
+}
+
+.nav{
+    margin-top: 1rem;
+    background-color: #23B7D9;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav a{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight:500;
+    list-style: 5rem;
+}
+
+.nav > button{
+    height: 3rem;
+    margin: 1rem;
+    background-color: #252ed9;
+    border-radius: 3rem;
+}
+.margin{
+    margin-top: 7rem !important;
 }

@@ -28,7 +28,7 @@ export class FromPropuestaComponent implements OnInit {
     })
   }
   save(){
-    let propuesta = new Propuesta();
+    let propuesta= new Propuesta();
     propuesta.price = this.form.value['price']
     this.onSave.emit(propuesta);
     
