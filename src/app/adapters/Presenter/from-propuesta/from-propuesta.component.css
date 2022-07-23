@@ -1,0 +1,29 @@
+.butons{
+    justify-items: center;
+    top: 20%;
+}
+
+.cancel{
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;    
+}
+
+.cancel:hover {
+    transition: 0.3s;
+    background-color: white;
+}
+
+.submit{
+    color: white;
+    background-color: black;
+}
+.ofrecer{
+    margin-right: 0.5rem;
+    color: rgb(225, 225, 225);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    background-color: #41BF49;
+    border: rgb(225, 225, 225) solid 0.1rem ;
+}

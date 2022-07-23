@@ -44,12 +44,12 @@ export class SubastaCComponent implements OnInit {
     )
   }
   createPropuesta(propuesta:Propuesta) {
-    var sesionCookie: string = this.cookiesService.getCookieV()
+    var sesionCookie: string = this.cookiesService.getCookieC()
     propuesta.subasta = this.idSubasta;
     propuesta.comprador = +sesionCookie;
     this.propuestaservice.CrearPropuesta(propuesta).subscribe(
       (res) => {
-        this.router.navigate(['/Comprador-home']);
+        this.router.navigate(['/Comprador-home/subasta-c',this.subasta.idSubasta]);
       }
     )
 
