@@ -1,1 +1,45 @@
-
+<div class="body1">
+    <div class="navbar">
+    
+    </div>
+    
+    <div class="propuestas" >
+        <div *ngFor="let i of misPropuestas" class="propuestas">
+            <app-propuestas [propuesta]="i" >
+            </app-propuestas>
+        </div>
+    </div>
+    
+    <div class="inferiror position-absolute mx-auto">
+        <div class="justify-content-center mx-auto">
+            <div class="actual row" >
+                <div class="price col-6">
+                    S/{{mayor.price}}
+                </div>
+                <div class="col-6 nombre text-break text-center lh-1">
+                    <p>
+                        {{mayor.comprador.name}}
+                    </p>
+                </div>
+            </div>
+            <div class="subasta mt-5">
+                <div class="titulo">
+                    {{chatarra.titulo}}
+                </div>
+                <div class="descripcción mt-3 text-break" >
+                    {{chatarra.description}}
+                </div>
+            </div>
+            <div class="botones" >
+                <button class="return col-12" 
+                routerLink="/home">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button class="aceptar col" [disabled]="isNull()" (click)="AsegniarPropuesta()">
+                        ACEPTAR
+                </button>  
+            </div>
+                
+        </div>
+    </div>
+</div>

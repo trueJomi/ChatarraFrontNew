@@ -14,4 +14,8 @@ export class VendedorService {
   public loginVendedor(vendedor: Vendedor){
     return this.http.post(`${this.apiBase}/vendedor/login`,vendedor)
   }
+
+  public registrarVendedor(vendedor: Vendedor){
+    return this.http.post(`${this.apiBase}/vendedor/resgister`,vendedor)
+  }
 }

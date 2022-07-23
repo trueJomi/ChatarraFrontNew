@@ -16,8 +16,22 @@ export class CookieSesionService {
     this.cookieService.set('sesion',idV);
   }
 
-  public getCookieC(){
-    return this.cookieService.get('sesionC');
+  isEmptyCookieC(){
+    if(this.getCookieC() == ""){
+      return true
+    }
+    return false
+  }
+
+  isEmptyCookieV(){
+    if(this.getCookieV() == ""){
+      return true
+    }
+    return false
+  }
+
+  getCookieC():string{
+    return this.cookieService.get('sesionC')
   }
   public getCookieV(){
     return this.cookieService.get('sesion');
@@ -26,6 +40,7 @@ export class CookieSesionService {
   public deleteCookieC(){
     this.cookieService.delete('sesionC');
   }
+  
   public deleteCookieV(){
     this.cookieService.delete('sesion');
   }

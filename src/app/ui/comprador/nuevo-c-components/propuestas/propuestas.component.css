@@ -1,0 +1,25 @@
+.price{
+    width: 90%;
+    height: 3rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    background-color: rgb(190, 33, 33);
+    color: rgb(240, 240, 240);
+    border-radius: 1rem;
+}
+.icon{
+    color: white;
+    height: 3rem;
+    width: 3rem;
+    padding-left: 1.3rem;
+    font-weight: 700;
+    line-height: 3rem;
+    border-radius: 50%;
+    background-color:#23B7D9;
+}
+
+.prop{
+    height: 4rem;
+}

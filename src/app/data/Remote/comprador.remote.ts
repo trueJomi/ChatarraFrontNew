@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Comprador } from 'src/app/domain/entities/clients.entity';
 import { environment } from 'src/environments/environment';
 
@@ -13,5 +12,9 @@ export class CompradorService {
 
   public loginComprador(comprador: Comprador){
     return this.http.post(`${this.apiBase}/comprador/login`,comprador)
+  }
+
+  public registerComprador(comprador:Comprador){
+    return this.http.post(`${this.apiBase}/comprador/resgister`,comprador)
   }
 }

@@ -1,0 +1,20 @@
+
+<form class="form d-flex" (ngSubmit)="save()" autocomplete="off" [formGroup]="form" #frmPropuesta="ngForm">
+    <div class="col-10">
+        <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Precio a Ofrecer</mat-label>
+            <input matInput type="number" placeholder="Precio a Ofrecer" formControlName="price"/>
+
+            <mat-error *ngIf="form.controls['price'].hasError('required')">
+                Para hacer una propuesta necesita ingresar una cantidad
+            </mat-error>
+        </mat-form-field>
+        <!-- <input type="number" class="form-control mb-2 mr-sm-2" formControlName="price"
+            placeholder="Ingrese precio a ofrecer..."> -->
+    </div>
+    <div class="col-2">
+        <button class="ofrecer col-12" type="submit" [disabled]="frmPropuesta.invalid">
+            <i class="fa-solid fa-angle-right" ></i>
+        </button>
+    </div>
+</form>

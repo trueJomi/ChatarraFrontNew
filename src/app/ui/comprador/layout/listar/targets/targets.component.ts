@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PropuestaService } from 'src/app/data/remote/propuesta.remote';
-import { PropuestaExt, Subasta } from 'src/app/domain/entities/subasta.entity';
+import { PropuestaService } from 'src/app/data/Remote/propuesta.remote';
+import { PropuestaExt, } from 'src/app/domain/entities/subasta.entity';
 
 @Component({
   selector: 'app-targets',

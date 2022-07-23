@@ -21,8 +21,11 @@ export class SubastaService {
   CrearSubasta(subasta:Subasta){
     return this.http.post<Response<Subasta>>(`${this.apiBase}${this.controller}`,subasta)
   }
-  EditarSuvasta(subasta:Subasta){
+  EditarSubasta(subasta:Subasta){
     return this.http.put<Response<Subasta>>(`${this.apiBase}${this.controller}`,subasta)
+  }
+  GetSubasta(id:number){
+    return this.http.get<Response<Subasta>>(`${this.apiBase}${this.controller}/${id}`)
   }
 
 }

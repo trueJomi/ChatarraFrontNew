@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PropuestaService } from 'src/app/data/remote/propuesta.remote';
-import { PropuestaExt, Subasta } from 'src/app/domain/entities/subasta.entity';
+import { PropuestaService } from 'src/app/data/Remote/propuesta.remote';
+import { PropuestaExt, Subasta} from 'src/app/domain/entities/subasta.entity';
 
 @Component({
   selector: 'app-targets',
@@ -9,8 +9,8 @@ import { PropuestaExt, Subasta } from 'src/app/domain/entities/subasta.entity';
 })
 export class TargetsComponent implements OnInit {
   @Input()
-  target: any;
-  propuesta!: PropuestaExt;
+  target: Subasta;
+  propuesta: PropuestaExt;
   estados = [{
       nombre: "activo",
       class: "",
@@ -58,5 +58,7 @@ export class TargetsComponent implements OnInit {
     }
     return null;
   }
-
+  edit_subasta(){
+    
+  }
 }

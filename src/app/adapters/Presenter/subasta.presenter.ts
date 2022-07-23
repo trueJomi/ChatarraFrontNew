@@ -12,19 +12,15 @@ export class SubastaServicePresenter {
     ) {}
 
   crearSubasta(subasta:Subasta){
-    this.subastaService.CrearSubasta(subasta).subscribe(
-      (data)=>{
-        return data.body;
-      }
-    )
+    return this.subastaService.CrearSubasta(subasta)
   }
 
   EditarSubasta(subasta:Subasta){
-    this.subastaService.EditarSuvasta(subasta).subscribe(
-      (data)=>{
-        return data.body;
-      }
-    )
+    return this.subastaService.EditarSubasta(subasta)
+  }
+
+  GetSubasta(id:number){
+    return this.subastaService.GetSubasta(id)
   }
 
 }
