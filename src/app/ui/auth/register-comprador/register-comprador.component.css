@@ -1,0 +1,17 @@
+.boton {
+    background-color: #41bf49;
+    border-color: #41bf49;
+    color: white;
+    font-weight:500;
+}
+.boton:hover, .boton:active, .boton:visited {
+    background-color: #36a03d;
+    border-color: #36a03d;
+}
+
+.boton-otro-login {
+    border: none;
+    background: none;
+    font-weight: bold;
+    text-decoration: underline;
+}

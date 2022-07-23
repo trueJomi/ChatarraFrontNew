@@ -14,4 +14,7 @@ export class CompradorService {
   public loginComprador(comprador: Comprador){
     return this.http.post(`${this.apiBase}/comprador/login`,comprador)
   }
+  createComprador(comprador:Comprador){
+    return this.http.post<Comprador>(`${this.apiBase}/comprador/resgister`,comprador);
+  }
 }

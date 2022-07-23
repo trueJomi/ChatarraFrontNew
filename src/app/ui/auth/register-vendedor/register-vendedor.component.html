@@ -1,1 +1,66 @@
-<p>register-vendedor works!</p>
+<div class="container col-md-6 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <button class="boton-otro-login" routerLink="">
+                <i class="fa-solid fa-angle-left"></i>
+                <span> Ir a Incio de Sesión</span>
+            </button>
+            <h3>Registrar Vendedor</h3>
+        </div>
+        <div class="card-body mt-3">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Usuario:</label>
+                    <input [(ngModel)]="persona.user" name="user" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Contraseña:</label>
+                    <input [(ngModel)]="persona.password" name="password" type="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Telefono:</label>
+                    <input [(ngModel)]="persona.phone" name="phone" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Nombres:</label>
+                    <input [(ngModel)]="persona.name" name="name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Departamento: </label>
+                    <select class="form-select" aria-label="Default select example" name="departamento"
+                        [(ngModel)]="miDepartamento">
+                        <option selected [value]="null">Seleccione un Departamento...</option>
+                        <option *ngFor="let departamento of list" [ngValue]="departamento">
+                            {{departamento.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Provincia: </label>
+                    <select class="form-select" aria-label="Default select example" name="provincia"
+                        [(ngModel)]="miProvincia">
+                        <option selected>Seleccione un Provincia...</option>
+                        <option *ngFor="let provincia of miDepartamento?.provincias" [ngValue]="provincia">
+                            {{provincia.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Distrito: </label>
+                    <select class="form-select" aria-label="Default select example" name="distrito"
+                        [(ngModel)]="miDistrito">
+                        <option selected>Seleccione un Distrito...</option>
+                        <option *ngFor="let distrito of miProvincia?.distritos" [ngValue]="distrito">
+                            {{distrito.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Dirección:</label>
+                    <input [(ngModel)]="persona.direccion" name="direccion" type="text" class="form-control">
+                </div>
+                <button (click)="Guardar()" class="btn boton mt-3">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>

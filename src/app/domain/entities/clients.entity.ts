@@ -1,13 +1,17 @@
+import { Chatarra, Subasta } from "./subasta.entity"
+
 export class Vendedor{
     idVendedor?:number
     user?:string
     password?:string
     phone?:string
     name?:string
-    region?:string
-    ciudad?:string
+    departamento?:string
+    provincia?:string
     distrito?:string
     direccion?:string
+    chatarra?:Chatarra[]
+    subasta?:Subasta[]
 }
 export class Comprador{
     idShopper?:number
